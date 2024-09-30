@@ -13,22 +13,23 @@ export default defineConfig({
 				{
 					label: 'Noki',
 					items: [
-						{ label: 'Installation', slug: 'noki/installation' },
+						{ label: 'Noki Setup', slug: 'noki/setup' },
+						{ label: 'Noki Running', slug: 'noki/running' },
 					],
 				},
 				{
 					label: 'Reptile',
 					items: [
-						{ label: 'Installation', slug: 'reptile/installation' },
-						{ label: 'Modification', slug: 'reptile/modification' },
+						{ label: 'Reptile Installation', slug: 'reptile/installation' },
+						{ label: 'Reptile Modification', slug: 'reptile/modification' },
 					],
 				},
 				{
 					label: 'Sliders',
 					items: [
-						{ label: 'Installation', slug: 'sliders/installation' },
-						{ label: 'Modification', slug: 'sliders/modification' },
-						{ label: 'Deployment', slug: 'sliders/deployment' },
+						{ label: 'Sliders Installation', slug: 'sliders/installation' },
+						{ label: 'Sliders Modification', slug: 'sliders/modification' },
+						{ label: 'Sliders Deployment', slug: 'sliders/deployment' },
 					],
 				},
 			],
