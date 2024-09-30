@@ -11,6 +11,12 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Noki',
+					items: [
+						{ label: 'Installation', slug: 'noki/installation' },
+					],
+				},
+				{
 					label: 'Reptile',
 					items: [
 						{ label: 'Installation', slug: 'reptile/installation' },
