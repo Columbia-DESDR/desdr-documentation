@@ -5,15 +5,14 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'DESDR',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/Columbia-DESDR',
 			},
 			sidebar: [
 				{
 					label: 'Guides',
 					items: [
-						// Each item here is one entry in the navigation menu.
 						{ label: 'Example Guide', slug: 'guides/example' },
 						{ label: 'Example Guide Copy', slug: 'guides/examplecopy' },
 					],
