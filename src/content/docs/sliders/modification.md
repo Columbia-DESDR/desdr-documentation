@@ -5,7 +5,7 @@ description: A step-by-step guide to modify and enhance the Sliders project.
 
 ### Quick Summary
 
-- Make sure you've followed the [installation guide](./installation).
+- Make sure you've followed the [installation guide](/desdr-documentation/sliders/installation).
 - `git checkout DRC_DEMO`
 - All existing components: Go to `fist` folder.
 - <u>Learn how to create routes for pages and update pages:</u> Go to `routes > folder_name > +page.svelte`. To create a website tab, navigate to the `routes` folder and create a folder with a `+page.svelte` file. The folder name specifies the tab, and the `+page.svelte` reserves space for individual components.

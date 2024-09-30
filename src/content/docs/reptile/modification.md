@@ -5,7 +5,7 @@ description: A guide to modify the Reptile application and manage data updates.
 
 ### Getting Started
 
-1. Make sure you've followed the [Reptile installation guide](./installation).  
+1. Make sure you've followed the [Reptile installation guide](/desdr-documentation/reptile/installation).  
 2. Ensure you have the DBeaver IDE installed.
 
 ### Part 1: Updating Application or Data
