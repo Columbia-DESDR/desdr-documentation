@@ -38,5 +38,6 @@ export default defineConfig({
 	outDir: './docs',
 	build: {
 		assets: 'astro'
-	}
+	},
+	base: '/desdr-documentation/'
 });
