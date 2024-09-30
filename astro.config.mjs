@@ -11,6 +11,13 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Reptile',
+					items: [
+						{ label: 'Installation', slug: 'reptile/installation' },
+						{ label: 'Modification', slug: 'reptile/modification' },
+					],
+				},
+				{
 					label: 'Sliders',
 					items: [
 						{ label: 'Installation', slug: 'sliders/installation' },
