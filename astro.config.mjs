@@ -11,15 +11,12 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Sliders',
 					items: [
-						{ label: 'Example Guide', slug: 'guides/example' },
-						{ label: 'Example Guide Copy', slug: 'guides/examplecopy' },
+						{ label: 'Installation', slug: 'sliders/installation' },
+						{ label: 'Modification', slug: 'sliders/modification' },
+						{ label: 'Deployment', slug: 'sliders/deployment' },
 					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
 				},
 			],
 		}),
