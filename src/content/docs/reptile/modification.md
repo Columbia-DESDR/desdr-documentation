@@ -35,8 +35,10 @@ description: A guide to modify the Reptile application and manage data updates.
 - Open Terminal and connect via SSH using the following command:  
 
   ```bash
-  ssh -i "path-to-your-.pem-file" ubuntu@ec2-18-117-152-17.us-east-2.compute.amazonaws.com
+  ssh -i "path-to-your-.pem-file" ssh_connection_string
   ```
+
+  Take ssh_connection_string from [here](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit#heading=h.v4z7rh7qpv0r)
 
   Replace `path-to-your-.pem-file` with your actual file path.
   - If access is denied, change the file's permissions with:
@@ -77,18 +79,13 @@ description: A guide to modify the Reptile application and manage data updates.
   gunicorn -w 4 -b 0.0.0.0 'app:app' --daemon
   ```  
 
-- Go to [http://ec2-18-117-152-17.us-east-2.compute.amazonaws.com/](http://ec2-18-117-152-17.us-east-2.compute.amazonaws.com/) in your browser to check that the application is running.
+- Go to [this link](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit#heading=h.u59bz6s86i5l) in your browser to check that the application is running.
 
 ### Part 3: Accessing the Database (to extract feedback data)
 
 - **What You Need:** Choose an IDE like DBeaver for database access.  
 - **Setting Up a New Data Source:**  
   - Select **PostgreSQL**.  
-  - Use these settings:  
-    - **Host:** desdr.cp4iersqrqjv.us-east-2.rds.amazonaws.com  
-    - **Port:** 5432  
-    - **User:** postgre  
-    - **Password:** Desdr#2023_ddssii  
-    - **Database:** postgres  
+  - [Use these settings](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit#heading=h.40bp3i63gtit)
 - The feedback table is located under:  
   `postgres > schemas > reptile > feedback`

@@ -7,14 +7,14 @@ To run Noki locally, please follow these steps:
 
 ### 1. Access the Noki Repository on GitHub
 
-- Request access to the Noki GitHub repository from Max Mauerman (<mmauerman@iri.columbia.edu>).
+- Request access to the Noki GitHub repository from [Max Mauerman](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit?usp=sharing).
 - After gaining access, you can clone the repository or access the code using a Git client.
 
 ### 2. Create a Twilio Account
 
 - Sign up for a Twilio account at [Twilio Sign Up](https://login.twilio.com/u/signup?state=hKFo2SBic2c0aXdjVHBDcU9PTmxreFhsdHYyNk1UZVlzRF9DZqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIE11a0JPcE9qYmFScDJPZGtvQUV1aWpYcFdZTWFSQWoto2NpZNkgTW05M1lTTDVSclpmNzdobUlKZFI3QktZYjZPOXV1cks).
 - Verify your email address and phone number.
-- Request access to the IRI FIST Console from Max Mauerman (<mmauerman@iri.columbia.edu>). *[Information as of June 27th, 2024]*
+- Request access to the IRI FIST Console from [Max Mauerman](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit?usp=sharing). *[Information as of June 27th, 2024]*
 
 ### 3. Set Up ngrok
 
@@ -42,7 +42,7 @@ To run Noki locally, please follow these steps:
 You can access the IRI Database either live or via a local copy:
 
 - **Live Access via VPN**:  
-  - This requires approval from Max Mauerman (<mmauerman@iri.columbia.edu>) and Jeffrey Turmelle (<jefft@iri.columbia.edu>).  
+  - This requires approval from [Max Mauerman](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit?usp=sharing) and [Jeffrey Turmelle](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit?usp=sharing).  
   - Live access allows you to view and modify real-time information in the database.
 
 - **Local Copy**:  
