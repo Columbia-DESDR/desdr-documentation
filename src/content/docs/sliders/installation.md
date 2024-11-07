@@ -5,22 +5,22 @@ description: A step-by-step guide to install and run the Sliders project.
 
 ### Quick Summary
 
-- Clone the repo: [svelte-pi GitHub page](https://github.com/Columbia-DESDR/Sliders)
-- Start the site: `npm run dev`
+-   Clone the repo: [svelte-pi GitHub page](https://github.com/Columbia-DESDR/Sliders)
+-   Start the site: `npm run dev`
 
 ### What You Need
 
-- A computer with MacOS (for PC users, use Ubuntu in a VM)
-- Basic familiarity with the Terminal app
+-   A computer with MacOS or windows
+-   Basic familiarity with the Terminal app
 
-### Step 1: Software Requirements Specification 
+### Step 1: Software Requirements Specification
 
 #### Install Node.js and NPM Manually
 
-- **Get Node.js:** Go to [Node.js Downloads](https://nodejs.org/en/download/package-manager) and choose the installer for MacOS. Follow the prompts to install.
-- **Check Installation:** Open Terminal and type `node -v` and `npm -v`. If you see version numbers (like v18.0.1), you're set! If not, the installation might need a do-over.
+-   **Get Node.js:** Go to [Node.js Downloads](https://nodejs.org/en/download/package-manager) and choose the installer for MacOS. Follow the prompts to install.
+-   **Check Installation:** Open Terminal and type `node -v` and `npm -v`. If you see version numbers (like v18.0.1), you're set! If not, the installation might need a do-over.
 
-#### Alternate: Install Node.js and NPM using Terminal (untested)
+#### Alternate: Install Node.js and NPM using Terminal on MacOS (untested)
 
 1. Get Node.js
 
@@ -43,9 +43,11 @@ Choose one of the following methods based on your access and preference:
 
 #### Option A: GitHub (if you have access)
 
+##### Mac OS
+
 1. Visit the [svelte-pi GitHub page].
 2. Use the green "Code" button to find the SSH option and copy the link provided, i.e. `git@github.com:Columbia-DESDR/svelte-pi.git`.
-3. In Terminal, navigate to where you want the project. E.g.:
+3. In Terminal (on MacOS) or Command Prompt (on Windows), navigate to where you want the project. E.g.:
 
     ```bash
     cd ~/Desktop
@@ -68,7 +70,7 @@ Choose one of the following methods based on your access and preference:
 
 ### Step 3: Launch Your Website
 
-1. Open Terminal and navigate to the project folder. 
+1. Open Terminal and navigate to the project folder.
    E.g. `cd ~/Desktop/sliders/svelte-pi` or wherever you placed it.
 2. Install dependencies:
 
