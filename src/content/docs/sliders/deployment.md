@@ -103,7 +103,9 @@ This repository contains all necessary scripts to convert the provided data into
 
 ### Step 3: Setting up the Database for the New Country
 
-#### Option 1: Use the `csv_to_parquet.py` Script
+#### Option 1: Use the `csv_to_parquet.py` script
+
+Note: This option should only be used if your data fits the default format supported by the Sliders tools (described above).
 
 1. **csv_to_parquet.py** : Run this script for each .csv file to convert them into .parquet files.
 
