@@ -77,9 +77,9 @@ config.json
 
 ### Step 2: Preparing Raw Data
 
-Repo name: [Sliders Data Setup (data-setup Branch)](https://github.com/Columbia-DESDR/ethiopia/tree/data-setup)
+Repo name: [Sliders Data Setup (data-setup branch)](https://github.com/Columbia-DESDR/ethiopia/tree/data-setup)
 
-This repository contains all necessary scripts to convert the provided data into the required formats. Developers will need to create or modify scripts based on the specific raw input CSV files provided.
+This repository contains all necessary scripts to convert the provided data into the required formats. Developers may need to create or modify scripts based on the specific raw input CSV files provided.
 
 #### Setting up Your Workspace
 
@@ -99,7 +99,7 @@ This repository contains all necessary scripts to convert the provided data into
     - **evi.py**: Converts the evi file.
     - **crop_cal.py**: Converts the crop calendar file.
 
-    Note: A script for `admin.csv` is not required since the admin file should already in the correct format. If it is not, you can write your own script. The proper format is given in the previous section.
+    Note: A script for `admin.csv` is not required since the admin file should already in the correct format. If it is not, you can write a script to put your data into the proper format, which is given in the previous section.
 
 ### Step 3: Setting up the Database for the New Country
 
@@ -107,13 +107,13 @@ This repository contains all necessary scripts to convert the provided data into
 
 1. **csv_to_parquet.py** : Run this script for each .csv file to convert them into .parquet files.
 
-For Sliders to work properly, you need to create the following Parquet files:
+-   For Sliders to work properly, you need to create the following `.parquet` files by using the `csv_to_parquet.py` script on each of the corresponding `.csv` files:
 
--   `admin_raw.parquet`
--   `badyear_raw.parquet`
--   `chirps_raw.parquet`
--   `evi_raw.parquet`
--   `crop_cal_raw.parquet`
+    -   `admin_raw.parquet`
+    -   `badyear_raw.parquet`
+    -   `chirps_raw.parquet`
+    -   `evi_raw.parquet`
+    -   `crop_cal_raw.parquet`
 
 2. Copy the Parquet files to the `static` folder in your Svelte-Pi repository.
 
@@ -134,7 +134,7 @@ For Sliders to work properly, you need to create the following Parquet files:
 -   Ensure the schemas are ready.
 -   Grant permissions to the `fist` user.
 
-#### Step 2: Setting up the DBT Tool for the New Country
+##### Step 2: Setting up the DBT Tool for the New Country
 
 1. Update `dbt_project.yml` for the new region profile.
 2. Make necessary changes to variables in the YAML file.
@@ -161,7 +161,7 @@ For Sliders to work properly, you need to create the following Parquet files:
 7. Run models with `dbt run`.
 8. Generate documentation: `dbt docs generate` and `dbt docs serve`.
 
-#### Step 5: Exporting Data from the DBT Tool for Sliders
+##### Step 5: Exporting Data from the DBT Tool for Sliders
 
 1. Export `model_out.json` using the command `dbt client --write`.
 2. Move the `model_out.js` file into the `assets` folder in the Svelte-Pi repository if needed.
