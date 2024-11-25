@@ -91,8 +91,39 @@ This repository contains all necessary scripts to convert the provided data into
 
 #### Data Conversion Steps
 
-1. Set up the `config.json` file located at `python_scripts/data/config.json` (example file above).
-2. Run the following scripts to convert input file data into the required format:
+1. Set up the basic information for the `config.json` file located at `python_scripts/data/config.json`.
+
+    - To set up the file, you need to manually input the min and max years. Create a `config.json` file that matches the following format:
+
+```
+config.json
+{
+    "year_min": 1990,
+    "year_max": 2023
+}
+```
+
+2. Run the `setup_config.py` script located at `python_scripts/setup_config.py` to populate the `config.json` file with the ids and names for each region. This requires the `admin.csv` file to be in the correct format.
+
+    - After running the script, the `config.json` file should look like this:
+
+```
+config.json
+{
+    "names_to_ids": {
+        "Lapai": 1128,
+        "Minna": 1754,
+        "Mokwa": 1755,
+        "Moro": 1494
+    },
+    "year_min": 1990,
+    "year_max": 2023
+}
+```
+
+The `names_to_ids` dictionary will contain the region names and their corresponding ids from your `admin.csv` file.
+
+3. Run the following scripts to convert input file data into the required format:
 
     - **badyear.py**: Converts the badyear file.
     - **chirps.py**: Converts the chirps file.
@@ -105,7 +136,7 @@ This repository contains all necessary scripts to convert the provided data into
 
 #### Option 1: Use the `csv_to_parquet.py` script
 
-Note: This option should only be used if your data fits the default format supported by the Sliders tools (described above).
+Note: This option should only be used if your data matches the default format supported by the Sliders tools (described above).
 
 1. **csv_to_parquet.py** : Run this script for each .csv file to convert them into .parquet files.
 
@@ -178,3 +209,7 @@ Note: This option should only be used if your data fits the default format suppo
 1. Update `config.yml` files to reflect the correct `start_year`, `end_year` variables for the new data.
 2. Ensure the queries in the YAML files match the new data.
 3. The Sliders app should now pick up the new data and render the updated interface.
+
+```
+
+```
