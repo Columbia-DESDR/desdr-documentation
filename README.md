@@ -1,5 +1,9 @@
 # DESDR - Developer Guide
 
+## 🛠️ Updating Documenation
+
+To update the deployment for documentation, run `npm run build` and then `npm run preview` to see the changes locally. Once you are satisfied with the changes, push the changes to the `main` branch. The changes will be automatically deployed to the live site.
+
 ## 🚀 Project Structure
 
 Inside of your Astro + Starlight project, you'll see the following folders and files:
