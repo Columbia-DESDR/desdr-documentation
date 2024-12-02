@@ -194,7 +194,7 @@ Note: This option should only be used if your data matches the default format su
 7. Run models with `dbt run`.
 8. Generate documentation: `dbt docs generate` and `dbt docs serve`.
 
-##### Step 5: Exporting Data from the DBT Tool for Sliders
+##### Step 3: Exporting Data from the DBT Tool for Sliders
 
 1. Export `model_out.json` using the command `dbt client --write`.
 2. Move the `model_out.js` file into the `assets` folder in the Svelte-Pi repository if needed.
