@@ -21,6 +21,7 @@ export default defineConfig({
 					label: 'Reptile',
 					items: [
 						{ label: 'Reptile Installation', slug: 'reptile/installation' },
+						{ label: 'Reptile Configuration', slug: 'reptile/configuration' },
 						{ label: 'Reptile Modification', slug: 'reptile/modification' },
 					],
 				},
