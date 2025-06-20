@@ -1,52 +1,74 @@
 ---
-title: Setup Instructions for Noki
-description: A reference guide to install Noki
+title: Noki Gamification Server Setup
+description: This guide walks you through connecting to the server, setting up your environment the Noki Gamification application hosted via Apache.
 ---
 
-To run Noki locally, please follow these steps:
+This guide walks you through connecting to the server, setting up your environment, and deploying or updating the Noki Gamification application hosted via Apache., please follow these steps:
 
-### 1. Access the Noki Repository on GitHub
+### 1. Connect to VPN
 
-- Request access to the Noki GitHub repository from [Max Mauerman](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit?usp=sharing).
-- After gaining access, you can clone the repository or access the code using a Git client.
+Ensure you are connected to the IRI VPN using **Tunnelblick** or any other approved VPN tool.
 
-### 2. Create a Twilio Account
 
-- Sign up for a Twilio account at [Twilio Sign Up](https://login.twilio.com/u/signup?state=hKFo2SBic2c0aXdjVHBDcU9PTmxreFhsdHYyNk1UZVlzRF9DZqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIE11a0JPcE9qYmFScDJPZGtvQUV1aWpYcFdZTWFSQWoto2NpZNkgTW05M1lTTDVSclpmNzdobUlKZFI3QktZYjZPOXV1cks).
-- Verify your email address and phone number.
-- Request access to the IRI FIST Console from [Max Mauerman](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit?usp=sharing). *[Information as of June 27th, 2024]*
+### 2. SSH Into the Server
+Open your terminal and connect to the remote server:
 
-### 3. Set Up ngrok
+````
+ssh -l <user_name> fist.iri.columbia.edu
+````
 
-- Download ngrok, unzip, and install it on your local machine.
-- Create a free account on ngrok.
-- Copy your auth token from the ngrok dashboard.
-- Open a terminal or command prompt and run:
+Replace <user_name> with your provided username. Enter the given password when prompted.
 
-  ```
-  ngrok config add-authtoken YOUR_AUTHTOKEN
-  ```
+### 3. Project Directory Structure
 
-- To expose your local server, run:
+The core project resides in:
 
-  ```
-  ngrok http 8000
-  ```
+````
+/var/www/html/gamification/Noki
 
-*(Replace 8000 with your server's port as needed.)*
+````
 
-*Note:* The default port for Flask is 5000. If you're using Mac OS and encounter a 403 error, consider using port 8000 instead. Update the port in the *noki.py* program accordingly.
+The gamification directory is linked to an existing user’s  Bitbucket repository (rgd2127).
 
-### 4. Access the IRI Database
+The Noki subdirectory is linked to an existing user’s  GitHub repository (ritika1010).
 
-You can access the IRI Database either live or via a local copy:
 
-- **Live Access via VPN**:  
-  - This requires approval from [Max Mauerman](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit?usp=sharing) and [Jeffrey Turmelle](https://docs.google.com/document/d/1p6_Bz2I1a7JGNNEJCadDol7-bqreIs8KDZtnuaOG72w/edit?usp=sharing).  
-  - Live access allows you to view and modify real-time information in the database.
+### 4. Adding a New User / Setting Up Your Own Environment
 
-- **Local Copy**:  
-  - Obtain a SQL extract of the IRI Noki/Ikon database from Jeffrey Turmelle or another authorized user.
-  - For detailed setup instructions, refer to the document: [Setting up Postgres for your Application Development](https://drive.google.com/file/d/1El48a_8Q3CJUflNOZi3MAOmmOU74FRWX/view?usp=drive_link).
+For a new user to set up their own environment:
 
-*Note:* You may need to edit environmental variables to ensure the "psql" command works properly.
+1. Backup existing directories:
+
+````
+mv /var/www/html/gamification /var/www/html/gamification_old
+mv /var/www/html/gamification/Noki /var/www/html/gamification/Noki_old
+
+````
+2. Create personal GitHub and Bitbucket repositories under your username (ensure the names match to the existing names as it is expected in config).
+
+
+3. Clone the repositories:
+
+````
+cd /var/www/html
+git clone 
+https://bitbucket.org/<your_bitbucket_username>/gamification.git
+cd gamification
+git clone https://github.com/<your_github_username>/Noki.git
+
+````
+4. Install and Build frontend changes:
+
+````
+
+cd frontend/admin-ui
+npm install  # only if not done before
+npm run build
+
+````
+5. Restart Apache to pick up new changes:
+
+````
+sudo /usr/bin/systemctl restart apache2
+
+````

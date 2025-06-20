@@ -1,35 +1,67 @@
 ---
-title: Running Noki
-description: A reference guide to run Noki
+title: Running & Updating Noki
+description: A reference guide to running and updating Noki
 ---
 
-After completing the setup requirements, follow these steps to run Noki:
+After completing the setup requirements, follow these steps to run & updating Noki:
 
-### 1. Install Dependencies
+### When pushing new changes to GitHub:
+**1.** Push the changes to git from your local in the dev branch
 
-- Navigate to the Noki directory and install the dependencies listed in the *requirements.txt* file. 
-- **Note:** Some packages may be outdated. If you encounter errors, update the packages to their latest versions or to those specified in the error messages.
+**2.** SSH into the server and navigate to the Noki directory:
 
-### 2. Configure Database Connection
+````
+cd /var/www/html/gamification/Noki
+git pull origin main  # or the appropriate branch
+````
+**3.** Build frontend changes:
 
-- Ensure you have access to the database by either connecting to the VPN or using a local database.
-- You will need to specify the database credentials in the *config.py* file under the variable `POSTGRES_CREDS`. 
+````
+cd frontend/admin-ui
+npm install  # only if not done before
+npm run build
+````
+**4.** Restart Apache server:
 
-- For a local database, your credentials should look similar to the example below (replace the user and password with your own):
+````
+sudo /usr/bin/systemctl restart apache2
 
-```python
-POSTGRES_CREDS = {
-  'user': 'your_username',     # Replace with your username
-  'password': 'your_password',  # Replace with your password
-  'host': 'localhost',
-  'port': '5432',
-  'database': 'noki'
-}
-```
+````
 
-- If you're accessing the live database, obtain the necessary credentials from the contacts mentioned previously.
+**5.** Check Apache status:
 
-### 3. Run Noki
+````
+sudo /usr/bin/systemctl status apache2
 
-- Once the above steps are completed, you can run Noki locally:
-- You can run the application directly from your Integrated Development Environment (IDE) or from the terminal.
+````
+### Debugging & Logs
+
+To check for errors:
+
+**1.** Navigate to the Apache logs directory:
+
+````
+cd /var/log/apache2
+````
+**2.** Open the noki-error_log to view detailed errors:
+
+````
+cat noki-error_log
+# or to continuously monitor
+tail -f noki-error_log
+
+````
+### Final Checklist
+-Connected to VPN
+
+-SSH access confirmed
+
+-GitHub and Bitbucket repositories cloned
+
+-Frontend built via npm run build
+
+-Apache restarted and confirmed running
+
+-Logs checked for any errors
+
+
