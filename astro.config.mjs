@@ -8,14 +8,23 @@ export default defineConfig({
 			title: 'DESDR',
 			social: {
 				github: 'https://github.com/Columbia-DESDR',
-			},
-			sidebar: [
+			},			sidebar: [
 				{
-					label: 'Noki',
+					label: 'Noki Users Manual',
 					items: [
-						{ label: 'Noki Setup', slug: 'noki/setup' },
-						{ label: 'Noki Running', slug: 'noki/running' },
+						{ label: 'Introduction', slug: 'noki_users_manual/introduction' },
+						{ label: 'Admin Page Guide', slug: 'noki_users_manual/admin_page_guide' },
+						{ label: 'Creating a Basic Survey', slug: 'noki_users_manual/survey' },
+						{ label: 'Creating a Form', slug: 'noki_users_manual/form' },
+						{ label: 'Custom Functions Reference', slug: 'noki_users_manual/custom_function_references' },
 					],
+				},
+				{
+				   label: 'Noki',
+				   items: [
+					   { label: 'Setup', slug: 'noki/setup' },
+					   { label:'Running and Updating',slug: 'noki/running'},
+				   ]
 				},
 				{
 					label: 'Reptile',
