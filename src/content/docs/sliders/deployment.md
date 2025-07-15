@@ -115,7 +115,7 @@ This step includes setting up Sliders for a new deployment and hosting a reposit
 ### A. Branch Creation
 After the modification step above, create a new branch for your new deployment. It’s usually easier to start working from other branches and making specific changes.
 ```bash
-git checkout -b new_country [previous branch you are working from]
+git checkout -b new_country [ previous branch you are working from]
 ```
 
 ### B. Data and Configuration Updates
