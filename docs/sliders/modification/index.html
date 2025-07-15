@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-has-toc data-has-sidebar data-theme="dark" class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Sliders Modification Guide | DESDR</title><link rel="canonical"/><link rel="shortcut icon" href="/desdr-documentation/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v4.15.9"/><meta name="generator" content="Starlight v0.28.2"/><meta property="og:title" content="Sliders Modification Guide"/><meta property="og:type" content="article"/><meta property="og:url"/><meta property="og:locale" content="en"/><meta property="og:description" content="A step-by-step guide to modify and enhance the Sliders project."/><meta property="og:site_name" content="DESDR"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="A step-by-step guide to modify and enhance the Sliders project."/><script>
+<!DOCTYPE html><html lang="en" dir="ltr" data-has-toc data-has-sidebar data-theme="dark" class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Sliders Modification Guide | DESDR</title><link rel="canonical"/><link rel="shortcut icon" href="/desdr-documentation/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v4.15.9"/><meta name="generator" content="Starlight v0.28.2"/><meta property="og:title" content="Sliders Modification Guide"/><meta property="og:type" content="article"/><meta property="og:url"/><meta property="og:locale" content="en"/><meta property="og:description" content="A step-by-step guide to modify and enhance the Sliders project (VS Code version)."/><meta property="og:site_name" content="DESDR"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="A step-by-step guide to modify and enhance the Sliders project (VS Code version)."/><script>
 	window.StarlightThemeProvider = (() => {
 		const storedTheme =
 			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
@@ -71,81 +71,126 @@
 		})();
 	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="sl-flex social-icons astro-wu23bvmt"> <a href="https://github.com/Columbia-DESDR" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg> </a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Dark</option><option value="light" class="astro-4yphtoen">Light</option><option value="auto" selected class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
 	StarlightThemeProvider.updatePickers();
-</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">   <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><div class="toggle sl-flex astro-doynk5tl">On this page<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </div><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#quick-summary" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Quick Summary</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#getting-started" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Getting Started</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#part-1-adding-a-new-page-with-an-existing-component" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Part 1: Adding a New Page with an Existing Component</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#component-configurations" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Component Configurations</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#part-1-results" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Part 1: Results</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#part-2-making-components-interactive" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Part 2: Making Components Interactive</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#part-2-results" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Part 2: Results</span> </a>  </li> </ul>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#quick-summary" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Quick Summary</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#getting-started" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Getting Started</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#part-1-adding-a-new-page-with-an-existing-component" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Part 1: Adding a New Page with an Existing Component</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#component-configurations" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Component Configurations</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#part-1-results" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Part 1: Results</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#part-2-making-components-interactive" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Part 2: Making Components Interactive</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#part-2-results" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Part 2: Results</span> </a>  </li> </ul>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body lang="en" dir="ltr" class="astro-bguv2lll">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">Sliders Modification Guide</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <h3 id="quick-summary">Quick Summary</h3>
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">   <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><div class="toggle sl-flex astro-doynk5tl">On this page<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </div><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#quick-summary-vs-code-version" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Quick Summary (VS Code version)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#getting-started" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Getting Started</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#part-1-adding-a-new-page-with-an-existing-component" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Part 1: Adding a New Page with an Existing Component</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#set-up-your-workspace" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Set Up Your Workspace</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#creating-routes-for-pages" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Creating Routes for Pages</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#update-your-page" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Update Your Page</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#component-configurations" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Component Configurations</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#edit-your-demo-page" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Edit Your Demo Page</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#update-the-config-file-again" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Update the Config File Again</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#enable-interactivity" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Enable Interactivity</span> </a>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#quick-summary-vs-code-version" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Quick Summary (VS Code version)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#getting-started" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Getting Started</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#part-1-adding-a-new-page-with-an-existing-component" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Part 1: Adding a New Page with an Existing Component</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#set-up-your-workspace" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Set Up Your Workspace</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#creating-routes-for-pages" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Creating Routes for Pages</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#update-your-page" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Update Your Page</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#component-configurations" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Component Configurations</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#edit-your-demo-page" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Edit Your Demo Page</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#update-the-config-file-again" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Update the Config File Again</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#enable-interactivity" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Enable Interactivity</span> </a>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body lang="en" dir="ltr" class="astro-bguv2lll">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">Sliders Modification Guide</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <h2 id="quick-summary-vs-code-version">Quick Summary (VS Code version)</h2>
 <ul>
 <li>Make sure you’ve followed the <a href="/desdr-documentation/sliders/installation">installation guide</a>.</li>
 <li><code dir="auto">git checkout DRC_DEMO</code></li>
-<li>All existing components: Go to <code dir="auto">fist</code> folder.</li>
-<li><u>Learn how to create routes for pages and update pages:</u> Go to <code dir="auto">routes > folder_name > +page.svelte</code>. To create a website tab, navigate to the <code dir="auto">routes</code> folder and create a folder with a <code dir="auto">+page.svelte</code> file. The folder name specifies the tab, and the <code dir="auto">+page.svelte</code> reserves space for individual components.</li>
-<li><u>Data source</u> is in: <code dir="auto">static > .parquet</code> files.
+<li>Learn how to create routes for pages and update pages: Go to <code dir="auto">routes > folder_name > +page.svelte</code>. To create a website tab, navigate to the <code dir="auto">routes</code> folder and create a folder with a <code dir="auto">+page.svelte</code> file. The folder name specifies the tab and the page. Svelte reserves space for individual components.</li>
+<li><strong>Data source is in:</strong> Go to <code dir="auto">static > .parquet</code> files.
 <ul>
-<li><strong>Why .parquet files?</strong> They offer efficient compression and encoding schemes.</li>
+<li><strong>Why .parquet files?</strong> Because it offers efficient compression and encoding schemes.</li>
+<li>(Latency concerns with certain countries mean that it is currently optimal to load all the data, but potential future work to be done to link to databases instead of static files.)</li>
 </ul>
 </li>
-<li><u>Configure your component:</u> Go to <code dir="auto">assets > configure.yml</code>
+<li><strong>Configure your component:</strong> Go to <code dir="auto">assets > configure.yml</code>
 <ul>
 <li>Think of your YAML file as the brain behind your website’s data display and interactions. It tells your site where to get data, how to query it, and how to show it through charts and dropdown menus. You can adjust these settings to change what data is displayed and how it interacts with user inputs.</li>
 </ul>
 </li>
 </ul>
-<h3 id="getting-started">Getting Started</h3>
+<h2 id="getting-started">Getting Started</h2>
 <ul>
-<li>A computer with MacOS (for PC users, use Ubuntu in a VM)</li>
+<li>A computer with VS Code (continuing from the installation guide)</li>
 <li>Basic familiarity with the Terminal app</li>
-<li>Make sure you’ve followed the <a href="./installation">installation guide</a>.</li>
+<li>Make sure you’ve followed the installation guide.</li>
 <li>We’ll be working on the “DRC_DEMO” branch for this demo.</li>
 </ul>
-<h3 id="part-1-adding-a-new-page-with-an-existing-component">Part 1: Adding a New Page with an Existing Component</h3>
-<h4 id="set-up-your-workspace">Set Up Your Workspace</h4>
+<h2 id="part-1-adding-a-new-page-with-an-existing-component">Part 1: Adding a New Page with an Existing Component</h2>
+<h3 id="set-up-your-workspace">Set Up Your Workspace</h3>
 <ul>
 <li>
 <p>Switch to the “DRC_DEMO” branch:</p>
 <div class="expressive-code"><link rel="stylesheet" href="/desdr-documentation/astro/ec.j8ofn.css"><script type="module" src="/desdr-documentation/astro/ec.8zarh.js"></script><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">git</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">checkout</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">DRC_DEMO</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="git checkout DRC_DEMO"><div></div></button></div></figure></div>
+<p>If you get an error about changes not being saved, use <code dir="auto">git stash</code>.</p>
 </li>
 <li>
-<p>Check using <code dir="auto">git status</code>.</p>
+<p>Check if you are in the correct branch using <code dir="auto">git status</code>.</p>
 </li>
 <li>
-<p>Start your project with <code dir="auto">npm run dev</code> and keep your demo page open to see live updates.</p>
+<p>Start your project with <code dir="auto">npm run dev</code> and keep your DRC page open to see live updates.</p>
 </li>
 <li>
-<p>You should see a page with 3 tabs - Instructions, Two Column, and demo_page.</p>
+<p>You should see: a page with 3 tabs - Instructions, Two Column, Demo_page.</p>
 </li>
 </ul>
-<h4 id="creating-routes-for-pages">Creating Routes for Pages</h4>
-<ol>
-<li>
-<p>Go to the routes directory:</p>
-<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3C63B3">cd</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">../svelte-pi/src/routes</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="cd ../svelte-pi/src/routes"><div></div></button></div></figure></div>
-</li>
-<li>
-<p>Remove the Instructions and Two Column directories:</p>
-<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">rm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-r</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">Instructions</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">rm</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-r</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">Two</span><span style="--0:#F78C6C;--1:#AA0982">\ </span><span style="--0:#ECC48D;--1:#3C63B3">Column</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="rm -r Instructionsrm -r Two\ Column"><div></div></button></div></figure></div>
+<h3 id="creating-routes-for-pages">Creating Routes for Pages</h3>
 <ul>
-<li>You should see the two tabs disappear in the webpage.</li>
+<li>Navigate to the routes directory (on the left-hand side of VS Code): <code dir="auto">Sliders/src/routes</code>.</li>
+<li>Remove the Instructions page by right-clicking on the folder and then pressing delete. You should see the Instructions tab disappear on the webpage.</li>
+<li>To create a <code dir="auto">demo_page2</code> directory:
+<ul>
+<li>We have already set up this step in <code dir="auto">demo_page</code>. Please retrace our steps and make the changes for your own learning.</li>
+<li>While still in routes, create a folder named <code dir="auto">demo_page2</code> using the create folder button on the top left of your VS Code.</li>
+<li>Click on the folder you just created and create a file <code dir="auto">+page.svelte</code> file.</li>
+<li>Open the file, and you can start adding elements.</li>
+</ul>
+</li>
+<li>You should see a <code dir="auto">demo_page2</code> appear on your open webpage.</li>
+</ul>
+<h3 id="update-your-page">Update Your Page</h3>
+<p>Once inside <code dir="auto">+page.svelte</code>, this section is where you are reserving space for the individual components on the page. For this demo write:</p>
+<p><img  src="/desdr-documentation/astro/image1.CBj1ukhF_cTjs7.webp" alt="image 1" width="1008" height="180" loading="lazy" decoding="async"></p>
+<p>You should see the name “Demo Page” appear on your page.
+Try writing and changing the size of the header and the header name.
+You will not see any line chart or dropdown, since important libraries are not imported.</p>
+<p><img  src="/desdr-documentation/astro/image2.Bo4ozP7X_1Mfcrh.webp" alt="image 2" width="928" height="686" loading="lazy" decoding="async"></p>
+<p>You can just copy the libraries from the “Two Column” page but the minimalist version is above. Let’s see what each one does and why it’s important.</p>
+<h4 id="internal-project-modules">Internal Project Modules</h4>
+<ul>
+<li>
+<p><code dir="auto">import { backendLib } from "../../stores"</code></p>
+<ul>
+<li><strong>What it does:</strong> Provides access to a Svelte store that holds the backend library instance.</li>
+<li><strong>Why it’s needed:</strong> This is a global state container that allows different parts of your application to access the same data loading system. It ensures all components use the same backend instance for consistency.</li>
+<li><strong>Technical note:</strong> The $ syntax (<code dir="auto">$backendLib</code>) is Svelte’s way of accessing store values.</li>
 </ul>
 </li>
 <li>
-<p>Go to the <code dir="auto">demo_page</code> directory:</p>
-<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3C63B3">cd</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">demo_page</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="cd demo_page"><div></div></button></div></figure></div>
+<p><code dir="auto">import { BackendLibrary } from "../../backend/index"</code></p>
+<ul>
+<li><strong>What it does:</strong> The core data management system that handles loading and processing data files.</li>
+<li><strong>Why it’s needed:</strong> This class loads your parquet files (like DRC_CHIRPS.parquet), runs SQL queries on them, and provides data to your charts. Without it, you have no way to access your data files.</li>
+<li><strong>Key capability:</strong> Handles DuckDB integration for querying parquet files.</li>
+</ul>
 </li>
 <li>
-<p>Open the <code dir="auto">+page.svelte</code> file:</p>
-<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">vi</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">./+page.svelte</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="vi ./+page.svelte"><div></div></button></div></figure></div>
+<p><code dir="auto">import { Magic } from "../../magic"</code></p>
+<ul>
+<li><strong>What it does:</strong> The central coordination system that connects data sources to visual components.</li>
+<li><strong>Why it’s needed:</strong> Acts as the “brain” that manages the relationship between your data (backends) and your charts (views). It handles interactions, data flow, and component communication.</li>
+<li><strong>Key responsibility:</strong> Ensures when you select something in a dropdown, the chart updates with new data.</li>
+</ul>
 </li>
-</ol>
-<h4 id="update-your-page">Update Your Page</h4>
+<li>
+<p><code dir="auto">import { Config } from "../../config"</code></p>
 <ul>
-<li>Once inside <code dir="auto">+page.svelte</code>, scroll to the bottom of the page below the <code dir="auto">&#x3C;/script></code> tag. This section is where you are reserving space for the individual components on the page. For this demo:
-<ul>
-<li>Try changing the size of the header and the header name.</li>
-<li>Delete the <code dir="auto">div</code> for the dd component (which will be covered in a later guide), and make note of the name used for the existing line chart. By default, it is “line”, but you can also change it to something like “testing”.</li>
+<li><strong>What it does:</strong> Processes the configuration file and creates all the charts, dropdowns, and interactions.</li>
+<li><strong>Why it’s needed:</strong> Reads your config.yml file and translates it into actual visual components. It’s what turns selector: “#line” into a real chart in your <code dir="auto">&#x3C;div id="line" /></code> element.</li>
+<li><strong>Key function:</strong> The <code dir="auto">init()</code> method actually creates and renders all your visualizations.</li>
 </ul>
 </li>
 </ul>
-<h3 id="component-configurations">Component Configurations</h3>
-<p>Now that we have created a new tab and reserved space for a new component, it is time to update the config file to reflect these changes.
-Location: <code dir="auto">assets > config.yml</code></p>
+<h4 id="asset-imports">Asset Imports</h4>
+<ul>
+<li><code dir="auto">import rawconfig from "../../assets/config.yml?raw"</code>
+<ul>
+<li><strong>What it does:</strong> Imports the raw text content of your configuration file.</li>
+<li><strong>Why it’s needed:</strong> Contains all the specifications for your charts - what type of chart, where to display it, what data to use, and how components interact with each other.</li>
+<li><strong>The ?raw suffix:</strong> Tells the build system to import the file as plain text rather than trying to process it.</li>
+</ul>
+</li>
+</ul>
+<h4 id="framework-functions">Framework Functions</h4>
+<ul>
+<li><code dir="auto">import { onMount } from "svelte"</code>
+<ul>
+<li><strong>What it does:</strong> A Svelte lifecycle function that runs after the DOM elements are ready.</li>
+<li><strong>Why it’s needed:</strong> Critical timing - your <code dir="auto">&#x3C;div id="line" /></code> and <code dir="auto">&#x3C;div id="dd" /></code> elements must exist in the DOM before the system tries to create charts inside them. Running chart creation too early results in “element not found” errors.</li>
+</ul>
+</li>
+</ul>
+<h2 id="component-configurations">Component Configurations</h2>
+<p><strong>Location:</strong> <code dir="auto">assets > config.yml</code></p>
 <p>Your YAML file is like a recipe that tells your website how to display data and interact with users. It’s divided into four main parts:</p>
 <ol>
 <li><strong>Data Sources (Backends)</strong>
@@ -162,7 +207,7 @@ Location: <code dir="auto">assets > config.yml</code></p>
 </li>
 <li><strong>Display Components (Views)</strong>
 <ul>
-<li><strong>Line Chart:</strong> This part sets up a line chart (<code dir="auto">LineArea</code>) showing rainfall over years.
+<li><strong>Line Chart:</strong> This part sets up a line chart (<code dir="auto">LineArea</code>) showing rainfall over the years.
 <ul>
 <li><strong>Key Details:</strong> You choose what data appears on the x-axis (<code dir="auto">year</code>) and y-axis (<code dir="auto">rain</code>). It pulls data from <code dir="auto">demo_query</code>.</li>
 <li><strong>Customization:</strong> The chart’s place on the page is marked by a unique ID (<code dir="auto">#line</code>). You can change this ID if you rename the chart in your webpage’s code.</li>
@@ -176,41 +221,25 @@ Location: <code dir="auto">assets > config.yml</code></p>
 </li>
 </ul>
 </li>
-<li>Making it Interactive (Interactions)
+<li><strong>Making it interactive (Interactions)</strong>
 <ul>
 <li><strong>What It Is:</strong> This part connects your dropdown menu to the line chart. When someone selects a territory, the chart shows the rainfall data for that area.</li>
 <li><strong>What to Know:</strong> This is set up under <code dir="auto">interactions</code> with a change type, meaning the chart’s data changes based on the dropdown’s selection.</li>
 </ul>
 </li>
 </ol>
-<h3 id="part-1-results">Part 1: Results</h3>
-<p><img src="/src/assets/docs/sliders/part1-results-1.png" alt="part1-results-1">
-<img src="/src/assets/docs/sliders/part1-results-2.png" alt="part1-results-2"></p>
-<h3 id="part-2-making-components-interactive">Part 2: Making Components Interactive</h3>
-<h4 id="edit-your-demo-page">Edit Your Demo Page</h4>
-<ul>
-<li>
+<p><img  src="/desdr-documentation/astro/image3.BG0dAc45_11kyOP.webp" alt="image 3" width="928" height="946" loading="lazy" decoding="async">
+<img  src="/desdr-documentation/astro/image4.xcESbBXr_Z1aQWVa.webp" alt="image 4" width="960" height="350" loading="lazy" decoding="async"></p>
+<h2 id="edit-your-demo-page">Edit Your Demo Page</h2>
 <p>Back in your demo page:</p>
-<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3C63B3">cd</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">../svelte-pi/src/routes/demo_page</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="cd ../svelte-pi/src/routes/demo_page"><div></div></button></div></figure></div>
-<ul>
-<li>In <code dir="auto">+page.svelte</code>, make room for a new interactive component, like a dropdown button, by adding a <code dir="auto">div</code> with <code dir="auto">id="dropdown"</code>.</li>
-</ul>
-</li>
-</ul>
-<h4 id="update-the-config-file-again">Update the Config File Again</h4>
-<p>In <code dir="auto">../svelte-pi/src/assets/config.yml</code>, add a new dropdown item. Ensure the dropdown’s ID matches what you named your <code dir="auto">div</code> in the routes folder. Configure it to display territory information.</p>
-<ul>
-<li>Make sure the dropdown is set to <code dir="auto">index: 0</code> to start with the first territory.</li>
-<li>Make sure the dropdown_key is set to “territory” to match the data source.</li>
-<li>For data, write a new query that pulls territory information from the “DRC_CHIRPS” dataset:</li>
-</ul>
-<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3C63B3">SELECT distinct territory FROM DRC_CHIRPS</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="SELECT distinct territory FROM DRC_CHIRPS"><div></div></button></div></figure></div>
+<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3C63B3">cd</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3C63B3">../src/routes/demo_page</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="cd ../src/routes/demo_page"><div></div></button></div></figure></div>
+<p>In <code dir="auto">+page.svelte</code>, make room for a new interactive component, like a dropdown button.</p>
+<p><img  src="/desdr-documentation/astro/image1.CBj1ukhF_cTjs7.webp" alt="image 5" width="1008" height="180" loading="lazy" decoding="async"></p>
+<h2 id="update-the-config-file-again">Update the Config File Again</h2>
+<p>In <code dir="auto">../src/assets/config.yml</code>, add a new dropdown item. Ensure the dropdown’s ID matches what you named your <code dir="auto">div</code> in the routes folder. Configure it to display territory information.</p>
+<p><img  src="/desdr-documentation/astro/image6.Cc65ugfv_Z2uhu4j.webp" alt="image 6" width="1050" height="500" loading="lazy" decoding="async"></p>
 <p>Your dropdown should be fully functional now, but there is currently no connection between the dropdown and the chart.</p>
-<h4 id="enable-interactivity">Enable Interactivity</h4>
-<ul>
-<li>In the config, add a new interaction that connects the dropdown to the line chart. This interaction should change the territory in the query when a user selects a new territory.</li>
-</ul>
-<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">interactions</span><span style="--0:#D6DEEB;--1:#403F53">:</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">- </span><span style="--0:#7FDBCA;--1:#111111">type</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3C63B3">change</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#7FDBCA;--1:#111111">name</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3C63B3">dropchange</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#7FDBCA;--1:#111111">defaults</span><span style="--0:#D6DEEB;--1:#403F53">:</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#111111">territory</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#9B504E">bulungu</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#7FDBCA;--1:#111111">to</span><span style="--0:#D6DEEB;--1:#403F53">:</span></div></div><div class="ec-line"><div class="code"><span class="indent">          </span><span style="--0:#7FDBCA;--1:#111111">backend</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3C63B3">demo_query</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="interactions:    - type: change      name: dropchange      defaults:          territory: &#x22;bulungu&#x22;      to:          backend: demo_query"><div></div></button></div></figure></div>
-<h3 id="part-2-results">Part 2: Results</h3>
-<p><img src="/src/assets/docs/sliders/part2-results.png" alt="part2-results">
-You’ve now added a new page with a static and an interactive component, making your site more dynamic. Congratulations!</p> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links astro-u2l5gyhi" dir="ltr"> <a href="/desdr-documentation/sliders/installation" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg>  <span class="astro-u2l5gyhi"> Previous <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Sliders Installation</span> </span> </a> <a href="/desdr-documentation/sliders/deployment" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg>  <span class="astro-u2l5gyhi"> Next <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Sliders Deployment</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
+<h2 id="enable-interactivity">Enable Interactivity</h2>
+<p>In the config, link the dropdown to the chart so that selecting a territory updates the chart data. Please note that this step is already done in the config page, but you can try deleting and writing the dropdown view to understand the code better.</p>
+<p><img  src="/desdr-documentation/astro/image7.o1niOX34_OkhpK.webp" alt="image 7" width="1056" height="1432" loading="lazy" decoding="async"></p>
+<p>You’ve now added a new page with a static and an interactive component, making your site more dynamic. Congratulations!</p> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links astro-u2l5gyhi" dir="ltr"> <a href="/desdr-documentation/sliders/installation" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg>  <span class="astro-u2l5gyhi"> Previous <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Sliders Installation</span> </span> </a> <a href="/desdr-documentation/sliders/deployment" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg>  <span class="astro-u2l5gyhi"> Next <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Sliders Deployment</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>

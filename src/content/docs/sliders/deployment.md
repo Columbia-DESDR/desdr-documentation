@@ -1,215 +1,164 @@
 ---
-title: "Sliders Deployment Guide"
-description: This guide outlines the steps required to update the Sliders tool to include data for Senegal.
+title: "Sliders New Deployment Guide"
+description: This guide outlines the steps required to update and deploy the Sliders tool for a new country using the BambooDuck data processing pipeline.
 ---
 
-This guide outlines the steps required to update the Sliders tool to include data for Senegal.
+## Overview
+This guide outlines the steps required to update the Sliders tool to include data for a new country using the BambooDuck data processing pipeline and deployment workflow.
 
-### Step 1: Raw Data Format
-
+## Step 1: Raw Data Format
 You'll need to prepare five different CSV files with specific data types and formats as given below:
 
-1. **Admin File**
+### Admin File
+- **Purpose:** Contains regional data specific to your country.
+- **Required Headers:**
+    - `gid`: A unique serial ID for each region.
+    - `region`: Name of the region.
+    - `chirps_early_first`, `chirps_early_last`, `chirps_late_first`, `chirps_late_last`: Specific dekad periods relating to rainfall seasons. These values are the default for the chirps_early and chirps_late Sliders window.
+    - `evi_month`: Indicates the month for vegetation index monitoring.
 
-    - **Purpose**: Contains regional data specific to Senegal.
-    - **Required Headers**:
-        - `gid`: A unique serial ID for each region.
-        - `region`: Name of the region.
-        - `status`: Comments about the region (details may vary).
-        - `chirps_early_first`, `chirps_early_last`, `chirps_late_first`, `chirps_late_last`: Specific dates relating to rainfall periods.
+### Badyear File
+- **Purpose:** Indicates which years were particularly bad for each region.
+- **Required Headers:**
+    - `gid`: Region identifier.
+    - `year`: The year in question.
+    - `variable`: Index ranking the severity of the year (e.g., 1st worst).
+    - `is_bad_year`: A boolean (true/false) indicating if it was a bad year.
 
-2. **Badyear File**
+### Chirps File
+- **Purpose:** Contains rainfall data for each ten-day period (dekad).
+- **Required Headers:**
+    - `dekad`: The specific ten-day period (1–36 or 37–54 depending on the hemisphere).
+    - `year`: The year of the data.
+    - `value`: Rainfall measurement in mm.
+    - `gid`: Region identifier.
 
-    - **Purpose**: Indicates which years were particularly bad for each region.
-    - **Required Headers**:
-        - `gid`: Region identifier.
-        - `year`: The year in question.
-        - `variable`: Index ranking the severity of the year (e.g., 1st = worst year).
-        - `is_bad_year`: A boolean (true/false) indicating if it was a bad year.
+### EVI File
+- **Purpose:** Contains vegetation index data for each dekad.
+- **Required Headers:**
+    - `year`: The year of the data.
+    - `value`: Vegetation index (0–1000 range).
+    - `gid`: Region identifier.
+    - `dekad`: The specific ten-day period (1–36).
 
-3. **Chirps File**
+### Crop Calendar File
+- **Purpose:** Defines agricultural seasons and timing.
+- **Required Headers:**
+    - `gid`: Region identifier.
+    - `crop`: Crop type.
+    - `activity`: Agricultural activity (planting, harvesting, etc.).
+    - `start_time`: Start date.
+    - `end_time`: End date.
 
-    - **Purpose**: Contains rainfall data for each ten-day period (dekad).
-    - **Required Headers**:
-        - `dekad`: The specific ten-day period.
-        - `year`: The year of the data.
-        - `value`: Rainfall measurement.
-        - `gid`: Region identifier.
+## Step 2: Setting Up BambooDuck and Data Preparation
+**Repository:**  
+[SlidersDataSetup-BambooDuck](https://github.com/Columbia-DESDR/SlidersDataSetup-BambooDuck)
 
-4. **Evi File**
-
-    - **Purpose**: Contains vegetation index data for each dekad.
-    - **Required Headers**:
-        - `year`: The year of the data.
-        - `value`: Vegetation index (0-1000 range).
-        - `gid`: Region identifier.
-        - `dekad`: The specific ten-day period.
-
-5. **Crop Calendar File**:
-
-    - **Purpose**: Contains planting period data for each crop for each region.
-    - **Required Headers**:
-        - `gid`: Region identifier.
-        - `crop`: Name of the crop.
-        - `activity`: Type of activity (e.g., planting, harvesting).
-        - `start_time`, `end_time`: Start and end dates for the activity.
-
-6. **Config File**:
-
-    - **Purpose**: Contains configuration data for the data conversion scripts.
-    - **Example**: Example `config.json` file is shown below:
-
+### A. Setting up your workspace
+1. **Clone the BambooDuck Repository (Terminal version):**
+```bash
+git clone https://github.com/Columbia-DESDR/SlidersDataSetup-BambooDuck
+cd SlidersDataSetup-BambooDuck
 ```
-config.json
-
-{
-    "names_to_ids": {
-        "Lapai": 1128,
-        "Minna": 1754,
-        "Mokwa": 1755,
-        "Moro": 1494
-    },
-    "year_min": 1990,
-    "year_max": 2023
-}
-
+2. **Go to the bangladesh branch:**
+```bash
+git checkout bangladesh
+```
+In the `Cleaning Scripts_bangladesh` folder you will find 5 python scripts used for data cleaning. They are named `generate_filename.py`.
+3. **Create a New Branch:**
+```bash
+git checkout -b yournewcountry
 ```
 
-### Step 2: Preparing Raw Data
+### B. Data Processing
+- Copy the cleaning scripts over and make adjustments specific to your region.
+- **Note:**
+    - Make sure the input and output folders have the right path and names.
+    - Check the data type and column names to match your specific implementation.
+- **Organize Files and Scripts:**
+    - **Input Files:** Place all raw input CSV files in a working directory.
+    - **Cleaning Scripts:** You can copy cleaning scripts from the bangladesh branch and edit them as needed.
+    - **Output Files:** Save the final formatted CSV files in the `seeds` folder in BambooDuck and the parquet files in a folder called `output` (these are the files you will use for your new deployment of the sliders).
 
-Repo name: [Sliders Data Setup (data-setup branch)](https://github.com/Columbia-DESDR/ethiopia/tree/data-setup)
+## Step 3: Generate Model Output Using BambooDuck (Query Building)
+The BambooDuck is a time-effective and less error-prone method of adjusting the model_out file, the "recipe book" of the slider. By adjusting the Macros and Models you can generate a `model_out.json` file which contains SQL queries. These SQL query templates are the actual drought/flood detection algorithms—when you move sliders in the UI, these queries re-execute with new parameters to calculate drought severity scores in real-time. The queries serve as both the data processing logic and the mathematical models that power all the charts, tables, and visualizations in the config.
 
-This repository contains all necessary scripts to convert the provided data into the required formats. Developers may need to create or modify scripts based on the specific raw input CSV files provided.
+- The Bangladesh branch of BambooDuck is specific to Bangladesh and some Models and Macros are edited and renamed. It could be useful to look at the main branch as well.
 
-#### Setting up Your Workspace
+### Update Variables in `dbt_project.yml`:
+- The values in this YAML file are specific to a country, so be sure to adjust them if needed.
 
-1. **Create a New Branch**: Start by creating a new branch in the repository, naming it after the country, for example, `Senegal`.
-2. **Organize Files and Scripts**:
-    - **Input Files**: Place all input CSV files in the `python_scripts/data/csv_preprocessed` folder.
-    - **Output Files**: Final formatted CSV files are saved in the `python_scripts/data` folder.
-    - **Scripts**: Find all Python scripts needed for data conversion in the `python_scripts` folder. Adjust these scripts as required based on data processing needs.
+### Updating the Macros
+- These contain reusable SQL templates (like `sum_early`, `sum_late`) that define the core drought/flood calculation logic and can be called from multiple models to avoid code duplication.
 
-#### Data Conversion Steps
+### Updating the Models
+- These contain the actual query definitions that use the macros to build complete analytical workflows, which then get compiled into the final SQL queries that power the sliders.
 
-1. Set up the basic information for the `config.json` file located at `python_scripts/data/config.json`.
-
-    - To set up the file, you need to manually input the min and max years. Create a `config.json` file that matches the following format:
-
+### Run the BambooDuck:
+```bash
+python main.py -p dbt_project.yml
 ```
-config.json
-{
-    "year_min": 1990,
-    "year_max": 2023
-}
-```
+This will output a `model_out.json` that contains the queries only (not in the form of the slider `model_out.ts`).
 
-2. Run the `setup_config.py` script located at `python_scripts/setup_config.py` to populate the `config.json` file with the ids and names for each region. This requires the `admin.csv` file to be in the correct format.
-
-    - After running the script, the `config.json` file should look like this:
-
-```
-config.json
-{
-    "names_to_ids": {
-        "Lapai": 1128,
-        "Minna": 1754,
-        "Mokwa": 1755,
-        "Moro": 1494
-    },
-    "year_min": 1990,
-    "year_max": 2023
-}
+### Convert for Sliders:
+- This python script automatically translates compiled SQL queries from the JSON into the TypeScript format required by the Sliders, handling formatting and variable syntax conversion.
+```bash
+python converter.py
 ```
 
-The `names_to_ids` dictionary will contain the region names and their corresponding ids from your `admin.csv` file.
+### Verify Output:
+- Ensure `model_out.ts` files are generated successfully. This model_out file is ready to replace the preexisting one on sliders. You can do this as many times as needed to make the Sliders work properly.
 
-3. Run the following scripts to convert input file data into the required format:
+## Step 4: Deploying the New Sliders
+This step includes setting up Sliders for a new deployment and hosting a repository.
 
-    - **badyear.py**: Converts the badyear file.
-    - **chirps.py**: Converts the chirps file.
-    - **evi.py**: Converts the evi file.
-    - **crop_cal.py**: Converts the crop calendar file.
-
-    Note: A script for `admin.csv` is not required since the admin file should already in the correct format. If it is not, you can write a script to put your data into the proper format, which is given in the previous section.
-
-### Step 3: Setting up the Database for the New Country
-
-#### Option 1: Use the `csv_to_parquet.py` script
-
-Note: This option should only be used if your data matches the default format supported by the Sliders tools (described above).
-
-1. **csv_to_parquet.py** : Run this script for each .csv file to convert them into .parquet files.
-
--   For Sliders to work properly, you need to create the following `.parquet` files by using the `csv_to_parquet.py` script on each of the corresponding `.csv` files:
-
-    -   `admin_raw.parquet`
-    -   `badyear_raw.parquet`
-    -   `chirps_raw.parquet`
-    -   `evi_raw.parquet`
-    -   `crop_cal_raw.parquet`
-
-2. Copy the Parquet files to the `static` folder in your Svelte-Pi repository.
-
-#### Option 2: Set up a PostgreSQL Database
-
-##### Step 1: Setting up the Database for the New Country
-
-[DBT Setup for Mac](https://github.com/Columbia-DESDR/dbt/blob/main/setup/DBT_Mac_README.md)
-
-1. Install PostgreSQL
-2. Create a database named `desdr`
-3. Create a role named `fist`
-4. Follow the instructions in the linked README.
-
-**Note**:
-
--   In `dump.sql`, change the owner to your PostgreSQL superuser and run `psql desdr < dump.sql`.
--   Ensure the schemas are ready.
--   Grant permissions to the `fist` user.
-
-##### Step 2: Setting up the DBT Tool for the New Country
-
-1. Update `dbt_project.yml` for the new region profile.
-2. Make necessary changes to variables in the YAML file.
-3. Ensure the DBT profile is set to the correct database or run `db init` and add the following information:
-
-    ```yml
-    DESDR_APPS:
-    target: dev
-    outputs:
-        dev:
-        type: postgres
-        host: localhost
-        user: fist
-        password: fist
-        port: 5432
-        dbname: desdr
-        schema: dbt_results
-        threads: 1
-    ```
-
-4. Move your raw CSV files to the seed folder.
-5. Run `dbt seed` to convert CSV files into tables in the database.
-6. Update models and macros as required for the new region.
-7. Run models with `dbt run`.
-8. Generate documentation: `dbt docs generate` and `dbt docs serve`.
-
-##### Step 3: Exporting Data from the DBT Tool for Sliders
-
-1. Export `model_out.json` using the command `dbt client --write`.
-2. Move the `model_out.js` file into the `assets` folder in the Svelte-Pi repository if needed.
-3. For raw data, run the `PATH/python_scripts/seed_loader.py` script.
-4. Ensure data is in INTEGER, VARCHAR, and BOOLEAN format when loaded into DuckDB, or use `seed_loader_new.py`.
-5. The `./database` folder will have an updated `schema.sql`.
-6. Produce `.parquet` files by running `PATH/python_scripts/re_exporter.py`.
-7. Move the `.parquet` files to the static folder for your dashboard deployment in Svelte-Pi.
-
-### Step 4: Integrating New Data in the Sliders Repository
-
-1. Update `config.yml` files to reflect the correct `start_year`, `end_year` variables for the new data.
-2. Ensure the queries in the YAML files match the new data.
-3. The Sliders app should now pick up the new data and render the updated interface.
-
+### A. Branch Creation
+After the modification step above, create a new branch for your new deployment. It’s usually easier to start working from other branches and making specific changes.
+```bash
+git checkout -b new_country [previous branch you are working from]
 ```
 
+### B. Data and Configuration Updates
+- Replace static folder data with New_country parquet files from the cleaning scripts you ran on BambooDuck and organized files in the output folder.
+- Update `src/assets/config.yml` for slider min/max, chart year domains, and backend year defaults.
+- Replace the model_out file by the one you made from BambooDuck in the `src/context/parameters/` folder.
+
+### C. Building and Deploying
+- When everything looks good, you can build and host the new sliders!
+- Push your latest version of the sliders to the remote repository as a new branch:
+```bash
+git commit -m "last commit message"
+git push -u origin <branch name>
 ```
+- Build the new branch:
+```bash
+npm install
+npm run dev # When everything works
+npm run build
+npm run preview # you can preview your build before hosting
+```
+
+#### Create New GitHub Repository:
+- Repository name: `Sliders-[YourCountry]` (e.g., Sliders-Bangladesh) in DESDR
+- Clone the Repository:
+```bash
+git clone https://github.com/DESDR/Sliders-YourCountry
+cd Sliders-YourCountry
+```
+
+#### Prepare for Deployment:
+- The build process from your new sliders adaptation creates a `docs/` folder.
+- Copy the `docs/` folder to the new repository you created in step 2.
+- Add a `.nojekyll` file both inside and outside the `docs/` folder (don't worry, it's an empty file).
+- Copy a `README.md` from any existing branch and update with your country-specific information like name and satellite information.
+
+#### Commit to GitHub:
+```bash
+git add .
+git commit -m "last commit message"
+# This is crucial: please copy and paste your last commit message of your new branch from the sliders repo to the new repository
+git push
+```
+
+### Access Your Deployment:
+GitHub will provide a URL like `https://columbia-desdr.github.io/Sliders-[new branch]` where your Sliders tool is hosted. The deployment typically takes a few minutes to become available. Now you have a new working deployment!
