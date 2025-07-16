@@ -123,7 +123,18 @@ git checkout -b new_country [ previous branch you are working from]
 - Update `src/assets/config.yml` for slider min/max, chart year domains, and backend year defaults.
 - Replace the model_out file by the one you made from BambooDuck in the `src/context/parameters/` folder.
 
-### C. Building and Deploying
+### C. Creating a new Convex Table
+The Convex database is where the user of the sliders can save an instance of the sliders and retrieve them with the same username.
+
+1. First, you will need to have access to the team’s Convex database account.
+2. Then, create `NewCountry_Data` and `NewCountry_State` tables on Convex.
+3. Try saving from your new slider and see where it saves.
+4. After you find out where, search up the data table name in VS Code.
+5. You will find that it is referenced in the `config.yml` file and the dashboard’s `page.svelte` files.
+6. Change both to your new data tables.
+7. Test if it works and push the changes if it does.
+
+### D. Building and Deploying
 - When everything looks good, you can build and host the new sliders!
 - Push your latest version of the sliders to the remote repository as a new branch:
 ```bash
