@@ -35,12 +35,13 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Sliders',
-					items: [
-						{ label: 'Sliders Installation', slug: 'sliders/installation' },
-						{ label: 'Sliders Modification', slug: 'sliders/modification' },
-						{ label: 'Sliders Deployment', slug: 'sliders/deployment' },
-					],
+				label: 'Sliders',
+				items: [
+					{ label: 'Sliders Installation', slug: 'sliders/installation' },
+					{ label: 'Sliders Modification', slug: 'sliders/modification' },
+					{ label: 'Sliders Deployment', slug: 'sliders/deployment' },
+					{ label: 'Sliders Export', slug: 'sliders/save-load' },
+				],
 				},
 			],
 		}),
